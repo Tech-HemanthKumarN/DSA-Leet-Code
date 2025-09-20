@@ -10,7 +10,7 @@ public:
             //single element
 
             if(s == e){
-                return arr[mid];
+                return arr[s];
             }
 
             //mid-1 index per value 
