@@ -22,6 +22,9 @@ public:
 
     }
     int minDays(vector<int>& bloomDay, int m, int k) {
+        long long int Product = ((long long)m * (long long) k);
+        if(bloomDay.size() < Product)
+        return -1;
         int start = *min_element(bloomDay.begin(), bloomDay.end()); // at least one flower is bloomed
         int end = *max_element(bloomDay.begin(), bloomDay.end()); // all flower is bloomed, pkka ban lung
         int ans = -1;
