@@ -18,6 +18,9 @@ public:
         return m == 0;
     }
     int minDays(vector<int>& bloomDay, int m, int k) {
+        long long int Product = (long long)m *(long long) k;
+        if(bloomDay.size() < Product)
+        return -1;
         int start = *min_element(bloomDay.begin(),bloomDay.end());
         int end = *max_element(bloomDay.begin(),bloomDay.end());
         int ans = -1;
