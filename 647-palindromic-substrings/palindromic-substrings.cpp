@@ -1,5 +1,7 @@
 class Solution {
 public:
+//this function returns the count of plaindrome substrings
+//using  i and j as center and expanding around it in iteration, if possible
     int expandAroundCenter(string str, int i, int j) {
         int count = 0;
         while (i >= 0 && j < str.length() && str[i] == str[j]) {
