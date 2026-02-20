@@ -1,42 +1,38 @@
 class Solution {
 public:
-    void normalise(string& str) {
-        char start = 'a';
-        unordered_map<char, char> mapping;
+void normalise(string &str){
+    char start = 'a';
+    unordered_map<char,char> mapping;
 
-        for (int i = 0; i < str.length(); i++) {
-            char stirngKaCharecter = str[i];
-            if (mapping.find(stirngKaCharecter) == mapping.end()) {
-                // if mapping is not present at first
-                // then create it and move ahead
-                mapping[stirngKaCharecter] = start;
-                start++;
-            }
+    for(int i = 0; i < str.length(); i++){
+        char stringKaChar = str[i];
+        if(mapping.find(stringKaChar) == mapping.end()){
+            mapping[stringKaChar] = start;
+            start++;
         }
-        // mapping is created now
-        // string str ko update or normailse kardo using mapping
-        for (int i = 0; i < str.length(); i++) {
-            char mappedChar = mapping[str[i]];
-            str[i] = mappedChar;
-        }
-        // tho humne str wali string normalise update / normailse kardia
     }
+
+    for(int i = 0; i < str.length(); i++){
+        char mappedChar = mapping[str[i]];
+        str[i] = mappedChar;
+    }
+}
     vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
+
         vector<string> ans;
+
         normalise(pattern);
-        // let's travrese on words --> normailse them --> check k vo pattern ke
-        // equal or nahi
-        for (int i = 0; i < words.size(); i++) {
-            // ith word
-            string currWord = words[i];
-            // noralise karo word ko
+
+        for(int i = 0; i < words.size(); i++){
+            string  currWord = words[i];
             string currWordCopy = currWord;
+
             normalise(currWordCopy);
-            if (currWordCopy.compare(pattern) ==  0) {
-                // ans me store kena h
+
+            if(currWordCopy.compare(pattern) == 0){
                 ans.push_back(currWord);
             }
-        }
-        return ans;
+        } 
+        return ans;   
     }
 };
