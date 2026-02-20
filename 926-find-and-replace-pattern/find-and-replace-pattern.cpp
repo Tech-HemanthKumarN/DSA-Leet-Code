@@ -32,7 +32,7 @@ public:
             // noralise karo word ko
             string currWordCopy = currWord;
             normalise(currWordCopy);
-            if (currWordCopy == pattern) {
+            if (currWordCopy.compare(pattern) ==  0) {
                 // ans me store kena h
                 ans.push_back(currWord);
             }
