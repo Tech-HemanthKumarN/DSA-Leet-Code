@@ -30,11 +30,19 @@ public:
             // ith word
             string currWord = words[i];
             // noralise karo word ko
-            string currWordCopy = currWord;
-            normalise(currWordCopy);
-            if (currWordCopy.compare(pattern) ==  0) {
-                // ans me store kena h
-                ans.push_back(currWord);
+
+            // string currWordCopy = currWord;
+            // normalise(currWordCopy);
+            // if (currWordCopy.compare(pattern) ==  0) {
+            //     // ans me store kena h
+            //     ans.push_back(currWord);
+            // }
+
+            //or
+
+            normalise(currWord);
+            if(currWord == pattern){
+                ans.push_back(words[i]);
             }
         }
         return ans;
