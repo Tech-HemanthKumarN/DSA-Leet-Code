@@ -1,4 +1,4 @@
-static string orderCopy; // golbal variable means class variable
+string orderCopy; // golbal variable means class variable
 
 class Solution {
 public:
