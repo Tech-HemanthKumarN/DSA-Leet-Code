@@ -18,6 +18,8 @@ public:
             //     rp--;
             // }
 
+            //or 
+            
             height[lp] < height[rp] ? lp++ : rp--;
         }
         return maxWater;
