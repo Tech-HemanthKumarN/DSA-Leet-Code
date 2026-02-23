@@ -25,7 +25,7 @@ public:
             int first = arr[i];
             int second = target - first;
 
-            if(mapping.find(second) != mapping.end()){
+            if(mapping.contains(second)){
                 ans.push_back(i);
                 ans.push_back(mapping[second]);
                 break;
