@@ -1,9 +1,13 @@
 class Solution {
 public:
     int countPrimes(int n) {
-        if(n == 0) return 0;
+        if(n == 0) return 0; //If n is 0, there are no primes to count, return immediately.
 
-        vector<bool> prime(n, true); // alreaday are prime maked already.
+        // Create a "Prime Tracker" Array
+
+        // Creates a boolean array of size n, every slot starts as true (assume all are prime)
+        //0 and 1 are not prime by definition, so mark them false
+        vector<bool> prime(n, true);
         prime[0] = prime[1] = false;
 
         int ans = 0;
